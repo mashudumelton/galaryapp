@@ -45,5 +45,20 @@
   <!-- The main bundle js is generated during the build process -->
   <script src="build/main.js"></script>
 
+
+  <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAgur-EgAHO34brK2K-aKCeoot69H5o0js",
+      authDomain: "mymedcaptureapp.firebaseapp.com",
+      databaseURL: "https://mymedcaptureapp.firebaseio.com",
+      projectId: "mymedcaptureapp",
+      storageBucket: "mymedcaptureapp.appspot.com",
+      messagingSenderId: "184323142932"
+    };
+    firebase.initializeApp(config);
+  </script>
+
 </body>
 </html>

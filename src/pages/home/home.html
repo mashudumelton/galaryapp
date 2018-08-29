@@ -1,0 +1,61 @@
+
+ <ion-header >
+  <ion-navbar color="primary">
+    <ion-title style="text-align: center;">Gallery App</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+
+  <div *ngIf="mash === 0">
+    <button ion-botton  style="margin-left:25%;text-align: center;background-color:purple;" ion-button default (click)= "navigate('u')"> Capture </button>
+    <button ion botton default style="text-align: center;background-color:purple;" ion-button default  (click)= "navigate('v')">Gallery</button>
+  </div>
+
+  <div *ngIf="mash === 1">
+ 
+    
+      <button ion-button style="text-align: center;background-color:purple;"  (click)="uploads('camera')">Camera <br> <ion-icon ios="ios-camera" md="md-camera"></ion-icon></button>
+  
+   
+      <button ion-button style="text-align: center;background-color:purple;"  (click)="uploads('audio')">Sound <br>  <ion-icon ios="ios-mic" md="md-mic"></ion-icon><br></button>
+   
+  
+      
+      <button ion-button style="text-align: center;background-color:purple;"(click)="uploads('video')">Video <br><ion-icon ios="ios-videocam" md="md-videocam"></ion-icon></button>
+    
+    <button ion-button  style="margin-top:100%;margin-left:37%;text-align: center;background-color:purple;"  (click)= "navigate('b')"><br><ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon> Back</button>
+  </div>
+
+
+
+  <ion-row *ngIf="mash === 2">
+    <ion-col ><button style="text-align: center;background-color:purple;" ion-button block (click)="viewUploads('p')">View <br> <ion-icon ios="ios-camera" md="md-camera"></ion-icon></button></ion-col>
+    <ion-col><button style="text-align: center;background-color:purple;" ion-button block (click)="viewUploads('a')">View <br> <ion-icon ios="ios-musical-notes" md="md-musical-notes"></ion-icon></button></ion-col>
+    <ion-col><button style="text-align: center;background-color:purple;" ion-button block (click)="viewUploads('v')">View  <br> <ion-icon ios="ios-videocam" md="md-videocam"></ion-icon></button></ion-col>
+    <button ion-button style="margin-top:100%;margin-left:37%;text-align: center;background-color:purple;" (click)= "navigate('b')"> <br> <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>Back</button>
+  </ion-row>
+
+  <div *ngIf="melt === 1">
+    <img  *ngFor="let imgUrl of images" src={{imgUrl}}>
+    <button style="text-align: center;background-color:purple;" ion-button (click)= "navigate('b')"><ion-icon ios="ios-arrow-back" md="md-arrow-back"> Back</ion-icon></button>
+  </div>
+  <div *ngIf="melt === 3">
+    <video *ngFor="let video of videos" src={{video}} type="video/3gp" controls  width="320" height="240"></video>
+    <video *ngFor="let video of videos" src={{video}} type="video/mp4" controls  width="320" height="240"></video>
+    <button style="text-align: center;background-color:purple;" ion-button  (click)= "navigate('b')"> <ion-icon ios="ios-arrow-back" md="md-arrow-back"> Back</ion-icon></button>
+    
+  </div>
+ 
+
+  <div *ngIf="melt === 4">
+    
+    <audio controls *ngFor="let audio of audios"   source src={{audio}} type="audio/mpeg"></audio>
+    <audio controls *ngFor="let audio of audios"   source src={{audio}} type="audio/ogg"></audio>
+    <audio controls *ngFor="let audio of audios" source src={{audio}} type="audio/wav"></audio>
+    <audio controls *ngFor="let audio of audios"  source src={{audio}} type="audio/mp3"></audio>
+    <audio controls *ngFor="let audio of audios" source src={{audio}} type="audio/mp4"></audio>
+    
+    <button style="text-align: center;background-color:purple;"ion-button (click)= "navigate('b')"> <ion-icon ios="ios-arrow-back" md="md-arrow-back"> Back</ion-icon></button>
+    
+  </div>
+</ion-content> 
